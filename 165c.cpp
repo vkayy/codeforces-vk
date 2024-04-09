@@ -24,31 +24,21 @@ typedef vector<ii> vii;
 #define INR(i,l,r) (l<i&&i<=r)
 
 void solve() {
-    ll k, res(0);
+    unordered_map<ll, ll> cnt;
+    ll k, res(0), cur(0);
     string s;
     cin>>k>>s;
-    ll l, cnt;
-    l = cnt = 0;
-    rep(r, 0, s.size()) {
-        if (s[r]=='1') cnt++;
-        // decrease the window while l<r and cnt>k
-        while (l<r && cnt>k)
-            if (s[l++]=='1') cnt--;
-        if (cnt==k) res++;
-        cout<<s.substr(l, r+1)<<nl;
+    cnt[0] = 1;
+    rep(i, 0, s.size()) {
+        cur += s[i]=='1';
+        res += cnt[cur-k];
+        cnt[cur]++;
     }
     cout<<res<<nl;
 }
 
 int main() {
     FASTIO
-    // int tc;
-    // cin>>tc;
-    // while(tc--) {
-    //     solve();
-    // } 
     solve();
     return 0;
-
 }
-
