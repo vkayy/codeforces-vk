@@ -1,3 +1,3 @@
-# codeforces
+# Codeforces
 
-This repository contains 
+This repository contains my Codeforces solutions.
