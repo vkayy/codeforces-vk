@@ -21,6 +21,7 @@
 		"unordered_map": "cpp",
 		"unordered_set": "cpp",
 		"valarray": "cpp",
-		"queue": "cpp"
+		"queue": "cpp",
+		"ostream": "cpp"
 	}
 }
